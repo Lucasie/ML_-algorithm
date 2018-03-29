@@ -19,7 +19,7 @@ x_train,x_test,y_train,y_test = train_test_split(X,Y,test_size=0.8,random_state=
 # # 将特征维度数据标准化,统一量纲
 ss = StandardScaler()
 x_train = ss.fit_transform(x_train)
-x_test = ss.fit(x_test)
+x_test = ss.fit_transform(x_test)
 
 # 创建KNN模型
 # 训练并测试模型
@@ -28,5 +28,3 @@ knn.fit(x_train,y_train)
 # y_predict = knn.predict(x_test)
 print('训练集成绩:%s'%(knn.score(x_train,y_train)))
 print('测试集成绩%s'%(knn.score(x_test,y_test)))
-
-
